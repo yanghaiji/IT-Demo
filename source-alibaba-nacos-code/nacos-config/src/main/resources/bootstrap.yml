@@ -15,8 +15,8 @@ spring:
     nacos:
       config:
         enabled: true
-        namespace: 23a1e8f1-0945-44eb-97ca-90ae49e6b0fc
-        server-addr: 40.73.101.80:8848
+        namespace: 97447291-3fc6-44bd-8572-27f359df652e
+        server-addr: 127.0.0.1:8848
         #添加配置时 Group 的值一定要和 spring.cloud.nacos.config.group 的配置值一致。
         group: NACOS-DEMO
         ## 多个 Data Id 同时配置时，他的优先级关系是 spring.cloud.nacos.config.extension-configs[n].data-id 其中 n 的值越大，优先级越高。
@@ -38,8 +38,8 @@ spring:
           refresh: true
         refresh-enabled: true
       discovery:
-        namespace: 23a1e8f1-0945-44eb-97ca-90ae49e6b0fc
-        server-addr: 40.73.101.80:8848
+        namespace: 97447291-3fc6-44bd-8572-27f359df652e
+        server-addr: 127.0.0.1:8848
         #设置注册的ip地址
         ip: 127.0.0.1
 

@@ -1,5 +1,6 @@
 package com.javayh.nacos.config.web;
 
+import com.javayh.nacos.config.config.NacosDome2Config;
 import com.javayh.nacos.config.config.NacosDomeConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,6 +34,8 @@ public class NacosAppController {
     @Autowired
     private NacosDomeConfig dto;
 
+    @Autowired
+    private NacosDome2Config dome2Config;
 
     /**
      * Data Id 在默认的组 nacos-demo,不支持配置的动态刷新
@@ -61,8 +64,27 @@ public class NacosAppController {
         return app03;
     }
 
+    /**
+     * 测试动态获取bean error
+     * @return
+     */
     @GetMapping(value = "get")
     public NacosDomeConfig get(){
         return dto;
     }
+
+    /**
+     * 测试同台刷新bean
+     * @return
+     */
+    @GetMapping(value = "getConfig")
+    public NacosDome2Config getConfig(){
+        System.out.println(dome2Config.getApp03());
+        System.out.println(dome2Config.getStatus());
+        NacosDome2Config nacosDome2Config = new NacosDome2Config();
+        nacosDome2Config.setApp03(dome2Config.getApp03());
+        nacosDome2Config.setStatus(dome2Config.getStatus());
+        return nacosDome2Config;
+    }
+
 }

@@ -4,6 +4,14 @@ import com.alibaba.nacos.api.annotation.NacosProperties;
 import com.alibaba.nacos.api.config.annotation.NacosConfigurationProperties;
 import com.alibaba.nacos.api.config.annotation.NacosProperty;
 import com.alibaba.nacos.api.config.annotation.NacosValue;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 /**
@@ -16,32 +24,11 @@ import org.springframework.stereotype.Component;
  * @version 1.0.0
  * @since 2021-02-01
  */
-@Component
-@NacosConfigurationProperties(
-        dataId = "ext-config-common03.yaml",
-        groupId = "REFRESH_GROUP",
-        prefix = "spring",
-        autoRefreshed = true)
+@Data
+@RefreshScope
+@Configuration
+@ConfigurationProperties(prefix = "spring")
 public class NacosDome2Config {
-
-    @NacosValue(value = "${app03}",autoRefreshed = true)
-    private String app;
-    @NacosValue(value = "${status}",autoRefreshed = true)
+    private String app03;
     private Boolean status;
-
-    public String getApp() {
-        return app;
-    }
-
-    public void setApp(String app) {
-        this.app =app;
-    }
-
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
-    }
 }

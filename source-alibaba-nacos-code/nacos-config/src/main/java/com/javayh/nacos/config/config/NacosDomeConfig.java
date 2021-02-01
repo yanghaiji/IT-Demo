@@ -2,6 +2,7 @@ package com.javayh.nacos.config.config;
 
 import com.alibaba.nacos.api.config.annotation.NacosConfigurationProperties;
 import com.alibaba.nacos.api.config.annotation.NacosValue;
+import lombok.Data;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Component;
  * @version 1.0.0
  * @since 2021-02-01
  */
+@Data
 @Component
 @NacosConfigurationProperties(
         dataId = "ext-config-common03.yaml",
