@@ -19,6 +19,7 @@
         <module>source-flink-code</module>
         <module>source-kafka-code</module>
         <module>soource-websocket-code</module>
+        <module>source-alibaba-nacos-code</module>
     </modules>
 
     <properties>
