@@ -1,0 +1,46 @@
+server:
+  port: 9004
+spring:
+  application:
+    name: nacos-config-demo
+  main:
+    allow-bean-definition-overriding: true
+  # 解决restful 404错误 spring.mvc.throw-exception-if-no-handler-found=true spring.resources.add-mappings=false
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+  cloud:
+    # nacos 配置
+    nacos:
+      config:
+        enabled: true
+        namespace: 23a1e8f1-0945-44eb-97ca-90ae49e6b0fc
+        server-addr: 40.73.101.80:8848
+        #添加配置时 Group 的值一定要和 spring.cloud.nacos.config.group 的配置值一致。
+        group: NACOS-DEMO
+        ## 多个 Data Id 同时配置时，他的优先级关系是 spring.cloud.nacos.config.extension-configs[n].data-id 其中 n 的值越大，优先级越高。
+        # 1、Data Id 在默认的组 default,不支持配置的动态刷新
+        extension-configs[0]:
+          data-id: ext-config-common01.yaml
+        # 2、Data Id 不在默认的组，不支持动态刷新
+        extension-configs[1]:
+          data-id: ext-config-common02.yaml
+          group: NACOS-DEMO-CONFIG
+        # 3、Data Id 既不在默认的组，也支持动态刷新
+        extension-configs[2]:
+          data-id: ext-config-common03.yaml
+          group: REFRESH_GROUP
+          refresh: true
+        shared-configs[0]:
+          data-id: ext-config-common03.yaml
+          group: REFRESH_GROUP
+          refresh: true
+        refresh-enabled: true
+      discovery:
+        namespace: 23a1e8f1-0945-44eb-97ca-90ae49e6b0fc
+        server-addr: 40.73.101.80:8848
+        #设置注册的ip地址
+        ip: 127.0.0.1
+
+

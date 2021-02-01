@@ -1,0 +1,3 @@
+spring:
+  app03: nacos-config-demo
+  status: true
