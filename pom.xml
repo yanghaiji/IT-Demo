@@ -20,6 +20,7 @@
         <module>source-kafka-code</module>
         <module>soource-websocket-code</module>
         <module>source-alibaba-nacos-code</module>
+        <module>source-oauth2-code</module>
     </modules>
 
     <properties>
