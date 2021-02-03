@@ -1,3 +1,4 @@
 spring:
-  app03: nacos-config-demo
+  app03: nacos-config-demo04
   status: true
+  url: getConfig
