@@ -21,6 +21,7 @@
         <module>soource-websocket-code</module>
         <module>source-alibaba-nacos-code</module>
         <module>source-oauth2-code</module>
+        <module>source-jdbctemplate-code</module>
     </modules>
 
     <properties>
