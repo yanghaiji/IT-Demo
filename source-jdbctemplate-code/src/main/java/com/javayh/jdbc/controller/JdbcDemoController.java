@@ -62,5 +62,34 @@ public class JdbcDemoController {
 
 
 
+    /**
+     * 查询总条数
+     * @param id
+     * @return
+     */
+    @PostMapping(value = "query")
+    public Integer query(Integer id){
+        return jdbcDemoService.query(id);
+    }
+
+    /**
+     * 查询实体
+     * @param id
+     * @return
+     */
+    @PostMapping(value = "queryDemo")
+    public Demo queryDemo(Integer id){
+        return jdbcDemoService.queryDemo(id);
+    }
+
+    /**
+     * 查询实体集合
+     * @return
+     */
+    @PostMapping(value = "queryAll")
+    public List<Demo> queryAll(){
+        return jdbcDemoService.queryAll();
+    }
+
 
 }

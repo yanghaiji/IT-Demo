@@ -64,6 +64,40 @@ public class JdbcDemoService {
         return jdbcTemplate.update(DELETE_DEMO, id);
     }
 
+    /**
+     * 查询总条数
+     * @param id
+     * @return
+     */
+    public Integer query(Integer id){
+        return jdbcTemplate.queryForObject(SELECT_COUNT,Integer.class);
+    }
+
+    /**
+     * 查询实体
+     * @param id
+     * @return
+     */
+    public Demo queryDemo(Integer id){
+        return jdbcTemplate.queryForObject(SELECT, (resultSet, i) -> {
+            int id1 = resultSet.getInt("id");
+            String name = resultSet.getString("name");
+            String pwd = resultSet.getString("pwd");
+            Demo demo = new Demo();
+            demo.setId(id1);
+            demo.setName(name);
+            demo.setPwd(pwd);
+            return demo;
+        },id);
+    }
+
+    /**
+     * 查询实体集合
+     * @return
+     */
+    public List<Demo> queryAll(){
+        return jdbcTemplate.query(SELECT_ALL,new BeanPropertyRowMapper<>(Demo.class));
+    }
 
 
 
