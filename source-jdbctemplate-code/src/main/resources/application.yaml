@@ -10,9 +10,9 @@ spring:
     allow-bean-definition-overriding: true
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url:  jdbc:mysql://106.15.203.109:3306/boke?serverTimezone=CTT&characterEncoding=utf8&autoReconnect=true&useUnicode=true&useSSL=true
-    username: root1
-    password: 123
+    url:  jdbc:mysql://localhost:3306/boke?serverTimezone=CTT&characterEncoding=utf8&autoReconnect=true&useUnicode=true&useSSL=true
+    username: root
+    password: root
     hikari:
       minimum-idle: 10
       maximum-pool-size: 30

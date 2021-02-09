@@ -27,6 +27,11 @@ public class JdbcDemoService {
     @Resource
     private JdbcTemplate jdbcTemplate;
 
+    /**
+     * 更多 jdbcTemplate 的api可以参考
+     * https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html
+     */
+
     String INSERT_DEMO = "INSERT INTO demo (name ,pwd) VALUES (?,?);";
     String UPDATE_DEMO = "UPDATE demo SET name =? ,pwd =?  WHERE id = ?;";
     String DELETE_DEMO = "DELETE FROM demo WHERE id = ?;";
@@ -96,6 +101,7 @@ public class JdbcDemoService {
      * @return
      */
     public List<Demo> queryAll(){
+        //List<Demo> demoList = jdbcTemplate.queryForList(SELECT_ALL, Demo.class);
         return jdbcTemplate.query(SELECT_ALL,new BeanPropertyRowMapper<>(Demo.class));
     }
 
