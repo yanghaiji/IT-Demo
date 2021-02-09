@@ -22,6 +22,7 @@
         <module>source-alibaba-nacos-code</module>
         <module>source-oauth2-code</module>
         <module>source-jdbctemplate-code</module>
+        <module>source-quartz-code</module>
     </modules>
 
     <properties>
