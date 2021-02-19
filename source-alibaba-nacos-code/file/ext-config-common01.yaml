@@ -1,0 +1,2 @@
+spring:
+  app01: nacos-config-demo
