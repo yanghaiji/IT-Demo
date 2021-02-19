@@ -18,11 +18,13 @@
         <module>source-java-code</module>
         <module>source-flink-code</module>
         <module>source-kafka-code</module>
-        <module>soource-websocket-code</module>
+        <module>source-websocket-code</module>
         <module>source-alibaba-nacos-code</module>
         <module>source-oauth2-code</module>
         <module>source-jdbctemplate-code</module>
         <module>source-quartz-code</module>
+        <module>source-concurrent-code</module>
+        <module>source-resttemplate-code</module>
     </modules>
 
     <properties>
