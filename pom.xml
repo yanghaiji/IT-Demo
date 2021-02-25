@@ -25,6 +25,8 @@
         <module>source-quartz-code</module>
         <module>source-concurrent-code</module>
         <module>source-resttemplate-code</module>
+        <module>source-leetcode-code</module>
+        <module>source-mail-code</module>
     </modules>
 
     <properties>
