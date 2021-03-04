@@ -38,6 +38,9 @@ public class AqsSemaphore {
         final CountDownLatch countDownLatch = new CountDownLatch(threadCount);
 
         //创建信号量
+        // 为何称之为信号量 ,是因为可以控制其同一时间访问数量
+        // 类似于停车场，里边可以容纳100辆车同时进入停车，但是当第101辆车来临时将进行阻塞等待
+        // 直到至少有一辆车退出停车场，才可进入
         Semaphore semaphore = new Semaphore(threadTotal);
 
         for (int i = 0; i < threadCount; i++) {
