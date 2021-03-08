@@ -27,6 +27,7 @@
         <module>source-resttemplate-code</module>
         <module>source-leetcode-code</module>
         <module>source-mail-code</module>
+        <module>source-mybatis-code</module>
     </modules>
 
     <properties>
