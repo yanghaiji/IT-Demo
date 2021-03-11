@@ -28,6 +28,7 @@
         <module>source-leetcode-code</module>
         <module>source-mail-code</module>
         <module>source-mybatis-code</module>
+        <module>source-shardingsphere-code</module>
     </modules>
 
     <properties>
