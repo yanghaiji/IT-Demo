@@ -1,0 +1,107 @@
+server:
+  port: 9010
+spring:
+  application:
+    name: sharing-mybatis
+  shardingsphere:
+    datasource:
+      # 分库分表配置，可配置多个logic_table_name
+      names: boke,dalao
+      boke:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://106.15.203.109:3306/boke?serverTimezone=CTT&characterEncoding=utf8&autoReconnect=true&useUnicode=true&useSSL=true
+        username: root1
+        password: 123
+        hikari:
+          minimum-idle: 10
+          maximum-pool-size: 30
+          auto-commit: true
+          idle-timeout: 30000
+          pool-name: sharing-mybatis-Hikari-01
+          max-lifetime: 60000
+          connection-timeout: 60000
+          validation-timeout: 5000
+          read-only: false
+          login-timeout: 5
+      dalao:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url:  jdbc:mysql://106.15.203.109:3306/dalao?serverTimezone=CTT&characterEncoding=utf8&autoReconnect=true&useUnicode=true&useSSL=true
+        username: dalap
+        password: yyds
+        hikari:
+          minimum-idle: 10
+          maximum-pool-size: 30
+          auto-commit: true
+          idle-timeout: 30000
+          pool-name:  sharing-mybatis-Hikari-02
+          max-lifetime: 60000
+          connection-timeout: 60000
+          validation-timeout: 5000
+          read-only: false
+          login-timeout: 5
+    sharding:
+      tables:
+        t_order:
+          # actualDataNodes: 真实数据节点，由数据源名 + 表名组成，以小数点分隔。
+          # 多个表以逗号分隔，支持inline表达式。不填写表示将为现有已知的数据源 + 逻辑表名称生成真实数据节点。
+          # 用于广播表（即每个库中都需要一个同样的表用于关联查询，多为字典表）或只分库不分表且所有库的表结构完全一致的情况。
+          actualDataNodes: boke.t_order_${0..1},dalao.t_order_${0..1}
+          #  分库策略，以下的分片策略只能任选其一
+          #  standard: 标准分片策略，用于单分片键的场景
+          #  inline 表达式分片策略
+          #  Hint分片策略
+          #  complex: 复合分片策略，用于多分片键的场景
+          databaseStrategy:
+            inline:
+              shardingColumn: user_id
+              algorithmExpression: boke${user_id % 2},dalao${user_id % 2}
+          #  分表策略，同分库策略
+          tableStrategy:
+            inline:
+              shardingColumn: order_id
+              algorithmExpression: t_order_${order_id % 2}
+          # id 策略
+          keyGenerator:
+            type: SNOWFLAKE
+            column: order_id
+        t_order_item:
+          actualDataNodes: boke.t_order_item_${0..1},dalao.t_order_item_${0..1}
+          databaseStrategy:
+            inline:
+              shardingColumn: user_id
+              algorithmExpression: boke${user_id % 2},dalao${user_id % 2}
+          tableStrategy:
+            inline:
+              shardingColumn: order_id
+              # 分库算法Inline表达式，需要符合groovy动态语法
+              algorithmExpression: t_order_item_${order_id % 2}
+      # 绑定表列表 逻辑表名列表，多个<logic_table_name>以逗号分隔
+      binding-tables:
+        - t_order,t_order_item
+      # 广播表
+      broadcast-tables:
+        - t_config
+      # 默认数据库分片策略，同分库策略
+      defaultDataSourceName: boke
+      # 默认数据表分片策略，同分库策略
+      defaultTableStrategy:
+        none:
+      defaultKeyGenerator:
+        type: SNOWFLAKE
+        column: order_id
+    #  是否开启SQL显示，默认值: false
+    props:
+      sql.shwo: true
+      # 工作线程数量，默认值: CPU核数
+      executor.size: 8
+## mybatis 常用配置
+mybatis:
+  ### xml存放路径
+  mapper-locations: classpath*:mapper/*/*Mapper.xml
+  configuration:
+    cache-enabled: true
+    lazy-loading-enabled: false
+    aggressive-lazy-loading: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
