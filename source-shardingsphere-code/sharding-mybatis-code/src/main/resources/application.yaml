@@ -10,8 +10,8 @@ spring:
       boke:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://106.15.203.109:3306/boke?serverTimezone=CTT&characterEncoding=utf8&autoReconnect=true&useUnicode=true&useSSL=true
-        username: root1
+        jdbc-url: jdbc:mysql://localhost:3306/boke?serverTimezone=CTT&characterEncoding=utf8&autoReconnect=true&useUnicode=true&useSSL=true
+        username: root
         password: 123
         hikari:
           minimum-idle: 10
@@ -27,8 +27,8 @@ spring:
       dalao:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url:  jdbc:mysql://106.15.203.109:3306/dalao?serverTimezone=CTT&characterEncoding=utf8&autoReconnect=true&useUnicode=true&useSSL=true
-        username: dalap
+        jdbc-url:  jdbc:mysql://localhost:3306/dalao?serverTimezone=CTT&characterEncoding=utf8&autoReconnect=true&useUnicode=true&useSSL=true
+        username: root
         password: yyds
         hikari:
           minimum-idle: 10
