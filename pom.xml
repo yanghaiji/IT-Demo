@@ -29,6 +29,7 @@
         <module>source-mail-code</module>
         <module>source-mybatis-code</module>
         <module>source-shardingsphere-code</module>
+        <module>source-seata-code</module>
     </modules>
 
     <properties>
