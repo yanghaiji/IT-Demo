@@ -30,6 +30,8 @@
         <module>source-mybatis-code</module>
         <module>source-shardingsphere-code</module>
         <module>source-seata-code</module>
+        <module>source-algorithm-code</module>
+        <module>source-netty-code</module>
     </modules>
 
     <properties>
