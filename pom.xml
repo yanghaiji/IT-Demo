@@ -32,6 +32,7 @@
         <module>source-seata-code</module>
         <module>source-algorithm-code</module>
         <module>source-netty-code</module>
+        <module>source-flume-code</module>
     </modules>
 
     <properties>
