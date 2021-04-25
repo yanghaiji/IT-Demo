@@ -53,10 +53,13 @@ public class AqsSemaphore {
                      * */
                     //==============普通获取信号==============
                     //获取信号
-                    semaphore.acquire();
-                    test(threadNum);
-                    //释放信号
-                    semaphore.release();
+                    try {
+                        semaphore.acquire();
+                        test(threadNum);
+                    }finally {
+                        //释放信号
+                        semaphore.release();
+                    }
                     //==============普通获取信号==============
                     //==============复杂获取信号，带个数和超时时间参数==============
 					/*if(semaphore.tryAcquire(1,1,TimeUnit.SECONDS)){

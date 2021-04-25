@@ -16,7 +16,12 @@ import java.util.concurrent.*;
 @Slf4j
 public class AqsCyclicBarrier {
 
-    private static CyclicBarrier cyclicBarrier = new CyclicBarrier(5,() -> {
+    /**
+     * CyclicBarrier 记录线程执行的个数，当达到构造的方法内的指定线程的个数才能释放
+     *      并且回调执行
+     *      如果 线程数量小于构造参数的数量将一直等待
+     */
+    private static CyclicBarrier cyclicBarrier = new CyclicBarrier(25,() -> {
         log.info("callback is running");
     });
 
