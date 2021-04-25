@@ -33,6 +33,7 @@
         <module>source-algorithm-code</module>
         <module>source-netty-code</module>
         <module>source-flume-code</module>
+        <module>source-design-pattern-code</module>
     </modules>
 
     <properties>
