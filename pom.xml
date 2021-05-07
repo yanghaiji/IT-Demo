@@ -34,6 +34,7 @@
         <module>source-netty-code</module>
         <module>source-flume-code</module>
         <module>source-design-pattern-code</module>
+        <module>source-spl-code</module>
     </modules>
 
     <properties>
