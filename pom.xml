@@ -12,8 +12,8 @@
     <groupId>com.javayh.advanced</groupId>
     <artifactId>advanced-demo</artifactId>
     <version>1.0.0.RELEASE</version>
-    <name>advanced-demo</name>
-    <description>advanced-demo</description>
+    <name>javayh-demo</name>
+    <description>javayh-demo</description>
 	<modules>
         <module>source-java-code</module>
         <module>source-flink-code</module>
@@ -35,6 +35,7 @@
         <module>source-flume-code</module>
         <module>source-design-pattern-code</module>
         <module>source-spl-code</module>
+        <module>source-jxls-code</module>
     </modules>
 
     <properties>
