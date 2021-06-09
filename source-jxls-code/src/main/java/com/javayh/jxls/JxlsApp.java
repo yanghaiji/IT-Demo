@@ -27,9 +27,11 @@ public class JxlsApp {
 
     public static void main(String[] args) throws ParseException, IOException {
         logger.info("Running Object Collection demo");
+        //简单的excel导出
+        //JxlsUtils.out01();
 
-        UserInfo.out01();
-        return;
+        //分组导出
+        JxlsUtils.outGroupExample();
     }
 
 }

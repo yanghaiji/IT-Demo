@@ -1,15 +1,15 @@
 package com.javayh.jxls.util;
 
+import com.javayh.jxls.model.UserInfo;
 import org.jxls.common.Context;
 import org.jxls.expression.JexlExpressionEvaluator;
 import org.jxls.transform.Transformer;
 import org.jxls.util.JxlsHelper;
 
 import java.io.*;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * <p>
@@ -22,64 +22,46 @@ import java.util.Map;
  */
 public class JxlsUtils{
 
-    private static final String TEMPLATE_PATH="template";
+    private static List<UserInfo> generateSampleEmployeeData() throws ParseException {
+        List<UserInfo> userInfos = new ArrayList<UserInfo>();
+        userInfos.add( new UserInfo(1, "12fawywhagwfqd", "1500", 15) );
+        userInfos.add( new UserInfo(2, "12fawywhagwfqd", "2300", 25) );
+        userInfos.add( new UserInfo(3, "12fawywhagwfqd", "2500", 10) );
+        userInfos.add( new UserInfo(4, "12fawywhagwfqd", "1700", 15) );
+        userInfos.add( new UserInfo(5, "12fawywhagwfqd", "2800", 20) );
+        return userInfos;
+    }
 
-    public static void exportExcel(InputStream is, OutputStream os, Map<String, Object> model) throws IOException{
+    /**
+     * 简单的excel导出
+     * @throws ParseException
+     * @throws IOException
+     */
+    public static void out01() throws ParseException, IOException {
+        List<UserInfo> employees = generateSampleEmployeeData();
+        OutputStream os = new FileOutputStream("C:\\javayh-demo\\source-jxls-code\\src\\main\\resources\\template\\object_collection.xlsx");
+        InputStream is = new FileInputStream("C:\\javayh-demo\\source-jxls-code\\src\\main\\resources\\template\\object_collection_template.xlsx");
         Context context = new Context();
-        if (model != null) {
-            for (String key : model.keySet()) {
-                context.putVar(key, model.get(key));
-            }
-        }
-        JxlsHelper jxlsHelper = JxlsHelper.getInstance();
-        Transformer transformer  = jxlsHelper.createTransformer(is, os);
-        JexlExpressionEvaluator evaluator = (JexlExpressionEvaluator)transformer.getTransformationConfig().getExpressionEvaluator();
-        Map<String, Object> funcs = new HashMap<String, Object>();
-        //  funcs.put("utils", new JxlsUtils());    //添加自定义功能
-        //  evaluator.getJexlEngine().setFunctions(funcs);
-        jxlsHelper.processTemplate(context, transformer);
+        context.putVar("userInfos", employees);
+        context.putVar("nowdate", new Date());
+        JxlsHelper.getInstance().setUseFastFormulaProcessor(true)
+                .processTemplate(is, os, context);
+        os.close();
     }
 
-    public static void exportExcel(File xls, File out, Map<String, Object> model) throws FileNotFoundException, IOException {
-        exportExcel(new FileInputStream(xls), new FileOutputStream(out), model);
+    public static void outGroupExample() throws ParseException, IOException {
+        List<UserInfo> employees = generateSampleEmployeeData();//group_example_collection
+        OutputStream os =
+                new FileOutputStream("C:\\javayh-demo\\source-jxls-code\\src\\main\\resources\\template\\group_example_collection.xlsx");
+        InputStream is =
+                new FileInputStream("C:\\javayh-demo\\source-jxls-code\\src\\main\\resources\\template\\group_example_collection_template.xlsx");
+        Context context = new Context();
+        context.putVar("userInfos", employees);
+        context.putVar("nowdate", new Date());
+        JxlsHelper.getInstance().setUseFastFormulaProcessor(true)
+                .processTemplate(is, os, context);
+        os.close();
     }
 
-    public static void exportExcel(String templateName, OutputStream os, Map<String, Object> model) throws FileNotFoundException, IOException {
-        File template = getTemplate(templateName);
-        if(template!=null){
-            exportExcel(new FileInputStream(template), os, model);
-        }
-    }
-
-
-    //获取jxls模版文件
-
-    public static File getTemplate(String name){
-        String templatePath = JxlsUtils.class.getClassLoader().getResource(TEMPLATE_PATH).getPath();
-        File template = new File(templatePath, name);
-        if(template.exists()){
-            return template;
-        }
-        return null;
-    }
-
-    // 日期格式化
-    public String dateFmt(Date date, String fmt) {
-        if (date == null) {
-            return "";
-        }
-        try {
-            SimpleDateFormat dateFmt = new SimpleDateFormat(fmt);
-            return dateFmt.format(date);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "";
-    }
-
-    // if判断
-    public Object ifelse(boolean b, Object o1, Object o2) {
-        return b ? o1 : o2;
-    }
 
 }
