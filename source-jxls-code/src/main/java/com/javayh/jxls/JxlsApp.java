@@ -31,7 +31,10 @@ public class JxlsApp {
         //JxlsUtils.out01();
 
         //分组导出
-        JxlsUtils.outGroupExample();
+        //JxlsUtils.outGroupExample();
+
+
+        JxlsUtils.outIf();
     }
 
 }
