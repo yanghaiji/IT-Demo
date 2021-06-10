@@ -68,7 +68,22 @@ public class JxlsUtils {
         is.close();
     }
 
-
+    public static void multi_sheet_markup_demo() throws IOException {
+        OutputStream os =
+                new FileOutputStream("C:\\javayh-demo\\source-jxls-code\\src\\main\\resources\\template\\multisheet_markup.xlsx");
+        InputStream is =
+                new FileInputStream("C:\\javayh-demo\\source-jxls-code\\src\\main\\resources\\template\\multisheet_markup_template.xlsx");
+        List<Department> departments = createDepartments();
+        try (is; os) {
+            Context context = PoiTransformer.createInitialContext();
+            context.putVar("departments", departments);
+            context.putVar("sheetNames", Arrays.asList(
+                    departments.get(0).getName(),
+                    departments.get(1).getName(),
+                    departments.get(2).getName()));
+            JxlsHelper.getInstance().processTemplate(is, os, context);
+        }
+    }
 
     private static List<Department> createDepartments() {
         List<Department> departments = new ArrayList<>();
