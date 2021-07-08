@@ -36,6 +36,7 @@
         <module>source-design-pattern-code</module>
         <module>source-spl-code</module>
         <module>source-jxls-code</module>
+        <module>source-redis-code</module>
     </modules>
 
     <properties>
