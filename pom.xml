@@ -37,6 +37,8 @@
         <module>source-spl-code</module>
         <module>source-jxls-code</module>
         <module>source-redis-code</module>
+        <module>source-webflux-code</module>
+        <module>source-redisson-code</module>
     </modules>
 
     <properties>
