@@ -41,11 +41,11 @@ public class MybatisController {
     @SneakyThrows
     @GetMapping(value = "name")
     public List<?> findAllName(){
-        String resource = "mybatis-config.xml";
+       /* String resource = "mybatis-config.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        Object o = sqlSession.selectOne("");
+        Object o = sqlSession.selectOne("");*/
         return dao.findAllName();
     }
 
