@@ -15,30 +15,33 @@
     <name>javayh-demo</name>
     <description>javayh-demo</description>
 	<modules>
-        <module>source-java-code</module>
-        <module>source-flink-code</module>
-        <module>source-kafka-code</module>
-        <module>source-websocket-code</module>
-        <module>source-alibaba-nacos-code</module>
-        <module>source-oauth2-code</module>
-        <module>source-jdbctemplate-code</module>
-        <module>source-quartz-code</module>
-        <module>source-concurrent-code</module>
-        <module>source-resttemplate-code</module>
-        <module>source-leetcode-code</module>
-        <module>source-mail-code</module>
-        <module>source-mybatis-code</module>
-        <module>source-shardingsphere-code</module>
-        <module>source-seata-code</module>
-        <module>source-algorithm-code</module>
-        <module>source-netty-code</module>
-        <module>source-flume-code</module>
-        <module>source-design-pattern-code</module>
-        <module>source-spl-code</module>
-        <module>source-jxls-code</module>
-        <module>source-redis-code</module>
-        <module>source-webflux-code</module>
-        <module>source-redisson-code</module>
+        <module>algorithm-demo</module>
+        <module>java-old-demo</module>
+        <module>flink-demo</module>
+        <module>kafka-demo</module>
+        <module>websocket-demo</module>
+        <module>alibaba-nacos-demo</module>
+        <module>oauth2-demo</module>
+        <module>jdbctemplate-demo</module>
+        <module>quartz-demo</module>
+        <module>concurrent-demo</module>
+        <module>resttemplate-demo</module>
+        <module>leetcode-demo</module>
+        <module>mail-demo</module>
+        <module>mybatis-demo</module>
+        <module>shardingsphere-demo</module>
+        <module>seata-demo</module>
+        <module>algorithm-demo</module>
+        <module>netty-demo</module>
+        <module>flume-demo</module>
+        <module>design-pattern-demo</module>
+        <module>java-spl-demo</module>
+        <module>jxls-demo</module>
+        <module>redis-demo</module>
+        <module>webflux-demo</module>
+        <module>redisson-demo</module>
+        <module>spring-spel-demo</module>
+        <module>spring-spel-demo</module>
     </modules>
 
     <properties>
