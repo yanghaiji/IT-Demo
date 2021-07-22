@@ -1,0 +1,37 @@
+masterSlaveServersConfig:
+  idleConnectionTimeout: 10000
+  connectTimeout: 10000
+  timeout: 3000
+  retryAttempts: 3
+  retryInterval: 1500
+  failedAttempts: 3
+  password: null
+  subscriptionsPerConnection: 5
+  clientName: null
+#  loadBalancer（负载均衡算法类的选择）
+#  默认值： org.redisson.connection.balancer.RoundRobinLoadBalancer
+#  在使用多个Redis服务节点的环境里，可以选用以下几种负载均衡方式选择一个节点：
+#  org.redisson.connection.balancer.WeightedRoundRobinBalancer - 权重轮询调度算法
+#  org.redisson.connection.balancer.RoundRobinLoadBalancer - 轮询调度算法
+#  org.redisson.connection.balancer.RandomLoadBalancer - 随机调度算法
+  loadBalancer: !<org.redisson.connection.balancer.RoundRobinLoadBalancer> {}
+  slaveSubscriptionConnectionMinimumIdleSize: 1
+  slaveSubscriptionConnectionPoolSize: 50
+  slaveConnectionMinimumIdleSize: 32
+  slaveConnectionPoolSize: 64
+  masterConnectionMinimumIdleSize: 32
+  masterConnectionPoolSize: 64
+#  读取操作的负载均衡模式
+#  默认值： SLAVE（只在从服务节点里读取）
+# 注：在从服务节点里读取的数据说明已经至少有两个节点保存了该数据，确保了数据的高可用性。
+# 设置读取操作选择节点的模式。 可用值为： SLAVE - 只在从服务节点里读取。 MASTER - 只在主服务节点里读取。 MASTER_SLAVE - 在主从服务节点里都可以读取。
+  readMode: "SLAVE"
+  slaveAddresses:
+    - "redis://127.0.0.1:6381"
+    - "redis://127.0.0.1:6380"
+  masterAddress: "redis://127.0.0.1:6379"
+  database: 0
+threads: 0
+nettyThreads: 0
+codec: !<org.redisson.codec.JsonJacksonCodec> {}
+"transportMode":"NIO"

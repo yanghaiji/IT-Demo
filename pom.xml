@@ -42,6 +42,7 @@
         <module>redisson-demo</module>
         <module>spring-spel-demo</module>
         <module>spring-spel-demo</module>
+        <module>spring-event-demo</module>
     </modules>
 
     <properties>
