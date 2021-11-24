@@ -44,10 +44,11 @@
         <module>spring-spel-demo</module>
         <module>spring-event-demo</module>
         <module>oshi-demo</module>
+        <module>kettle-spring-demo</module>
     </modules>
 
     <properties>
-        <java.version>14</java.version>
+        <java.version>8</java.version>
         <spring-boot.version>2.3.1.RELEASE</spring-boot.version>
         <maven.compiler.source.version>14</maven.compiler.source.version>
         <maven.compiler.target.version>14</maven.compiler.target.version>
@@ -98,6 +99,11 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>4.6.4</version>
         </dependency>
     </dependencies>
    

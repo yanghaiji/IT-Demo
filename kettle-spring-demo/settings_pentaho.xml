@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <pluginGroups>
+    </pluginGroups>
+    <proxies>
+    </proxies>
+
+    <servers>
+
+    </servers>
+
+    <mirrors>
+
+        <mirror>
+            <id>pentaho</id>
+            <name>pentaho internal nexus repository</name>
+            <url>http://nexus.pentaho.org/content/groups/omni/</url>
+            <mirrorOf>!internal.repo,*</mirrorOf>
+        </mirror>
+    </mirrors>
+
+    <profiles>
+        <profile>
+            <id>nexus-pandora</id>
+            <!-- 远程仓库列表 -->
+            <repositories>
+                <repository>
+                    <id>pentaho</id>
+                    <url>http://nexus.pentaho.org/content/groups/omni/</url>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <!--需要激活 <profile>中的ID才生效-->
+        <activeProfile>nexus-pandora</activeProfile>
+        <activeProfile>jdk-1.8</activeProfile>
+    </activeProfiles>
+</settings>
