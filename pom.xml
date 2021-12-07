@@ -45,6 +45,8 @@
         <module>spring-event-demo</module>
         <module>oshi-demo</module>
         <module>kettle-spring-demo</module>
+        <module>api-key-demo</module>
+        <module>flyway-demo</module>
     </modules>
 
     <properties>
