@@ -45,5 +45,6 @@
 | shardingsphere-demo | 分库分表                   |
 | spring-event-demo   | spring 企业级事件应用      |
 | spring-spel-demo    | sping SPEL 企业级开发相关  |
+| security-demo       | security 安全认证实现RBAC     |
 | webflux-demo        | 响应式编程                 |
 | websocket-demo      | websocket相关              |

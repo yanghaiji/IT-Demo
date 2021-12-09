@@ -47,6 +47,7 @@
         <module>kettle-spring-demo</module>
         <module>api-key-demo</module>
         <module>flyway-demo</module>
+        <module>security-demo</module>
     </modules>
 
     <properties>
