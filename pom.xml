@@ -48,10 +48,12 @@
         <module>api-key-demo</module>
         <module>flyway-demo</module>
         <module>security-demo</module>
+        <module>security-token-demo</module>
+        <module>testng-demo</module>
     </modules>
 
     <properties>
-        <java.version>8</java.version>
+        <java.version>14</java.version>
         <spring-boot.version>2.3.1.RELEASE</spring-boot.version>
         <maven.compiler.source.version>14</maven.compiler.source.version>
         <maven.compiler.target.version>14</maven.compiler.target.version>
