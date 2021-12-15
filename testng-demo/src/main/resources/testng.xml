@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="JavaYH Testng Demo ">
+    <!--    <listeners>
+            <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+            <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+            <listener class-name="com.javayh.testng.demo.ExtentTestNGIReporterListener1"/>
+        </listeners>
+        -->
+    <listeners>
+      <!--  <listener class-name="com.javayh.testng.demo.ExtentTestNGIReporterListener1"/>-->
+       <!-- <listener class-name="com.javayh.testng.demo.ExtentTestNGIReporterListener"/>-->
+    </listeners>
+    <test name="Demo01 Hello Word">
+        <classes>
+            <class name="com.javayh.testng.demo.demo01.HelloWord"/>
+        </classes>
+    </test>
+    <test name="Demo02 TestRuntime">
+        <classes>
+            <class name="com.javayh.testng.demo.demo02.TestRuntime"/>
+        </classes>
+    </test>
+    <test name="Demo03 TestParameter">
+        <classes>
+            <class name="com.javayh.testng.demo.demo03.TestParameter"/>
+            <parameter name="id" value="1222"/>
+            <parameter name="name" value="yanghaiji"/>
+            <parameter name="pwd" value="12345678"/>
+        </classes>
+    </test>
+</suite>

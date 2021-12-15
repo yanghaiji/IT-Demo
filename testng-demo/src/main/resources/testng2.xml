@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="JavaYH Testng Demo2 ">
+    <!--    <listeners>
+            <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+            <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+            <listener class-name="com.javayh.testng.demo.ExtentTestNGIReporterListener1"/>
+        </listeners>
+        -->
+    <listeners>
+       <!-- <listener class-name="com.javayh.testng.demo.ExtentTestNGIReporterListener1"/>-->
+        <!--<listener class-name="com.javayh.testng.demo.ExtentTestNGIReporterListener"/>-->
+    </listeners>
+
+    <test name="Demo01 annotation">
+        <classes>
+            <class name="com.javayh.testng.demo.annotation_demo.Demo01">
+                <methods>
+                    <include name="annotationTest01"/>
+                    <include name="annotationTest02"/>
+                </methods>
+            </class>
+        </classes>
+    </test> <!-- javayh-demo -->
+    <test name="GroupDemo01">
+        <classes>
+            <class name="com.javayh.testng.demo.annotation_demo.GroupDemo01">
+            </class>
+        </classes>
+    </test> <!-- javayh-demo -->
+    <test name="DataProviderTest">
+        <classes>
+            <class name="com.javayh.testng.demo.annotation_demo.DataProviderTest">
+                <methods>
+                    <include name="verifyData1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

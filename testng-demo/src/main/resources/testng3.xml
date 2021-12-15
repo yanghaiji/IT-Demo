@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="强依赖">
+    <test name="依赖控制执行顺序">
+        <classes>
+            <class name="com.javayh.testng.demo.annotation_demo.DependsOnMethodsTest"/>
+        </classes>
+    </test> <!-- javayh-demo -->
+</suite> <!-- Default Suite -->
