@@ -36,6 +36,7 @@
 | mybatis-demo        | mybatis相关                |
 | netty-demo          | netty相关                  |
 | oauth2-demo         | 第三方登录演示（github）   |
+| okhttp-demo         | 第三方登录演示（github）   |
 | oshi-demo           | 服务器状态检测             |
 | quartz-demo         | 定时框架                   |
 | redis-demo          | redis相关                  |
@@ -47,5 +48,6 @@
 | spring-spel-demo    | sping SPEL 企业级开发相关  |
 | security-demo       | security 安全认证实现RBAC     |
 | security-token-demo | security + token 安全认证实现RBAC     |
+| testng-demo         | 接口自动化测试                 |
 | webflux-demo        | 响应式编程                 |
 | websocket-demo      | websocket相关              |
