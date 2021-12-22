@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.Semaphore;
@@ -49,6 +50,7 @@ public class OkHttpClientApp {
                             .readTimeout(20, TimeUnit.SECONDS)
                             .sslSocketFactory(createSSLSocketFactory(trustManagers), (X509TrustManager) trustManagers[0])
                             .hostnameVerifier((hostName, session) -> true)
+                            .connectionSpecs(Collections.singletonList(createTls()))
                             .retryOnConnectionFailure(true)
                             .build();
                     addHeader("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36");
@@ -59,7 +61,6 @@ public class OkHttpClientApp {
 
     /**
      * 用于异步请求时，控制访问线程数，返回结果
-     *
      */
     private static Semaphore getSemaphoreInstance() {
         //只能1个线程同时访问
@@ -263,7 +264,6 @@ public class OkHttpClientApp {
 
     /**
      * 生成安全套接字工厂，用于https请求的证书跳过
-     *
      */
     private static SSLSocketFactory createSSLSocketFactory(TrustManager[] trustAllCerts) {
         SSLSocketFactory ssfFactory = null;
@@ -295,6 +295,21 @@ public class OkHttpClientApp {
                 }
         };
     }
+
+    /**
+     * 指定 tls 版本
+     * @return
+     */
+    private ConnectionSpec createTls() {
+        return new ConnectionSpec.Builder(ConnectionSpec.MODERN_TLS)
+                .tlsVersions(TlsVersion.TLS_1_2)
+                .cipherSuites(
+                        CipherSuite.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                        CipherSuite.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                        CipherSuite.TLS_DHE_RSA_WITH_AES_128_GCM_SHA256)
+                .build();
+    }
+
 
     /**
      * 自定义一个接口回调
