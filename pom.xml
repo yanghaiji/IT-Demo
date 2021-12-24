@@ -51,6 +51,7 @@
         <module>security-token-demo</module>
         <module>testng-demo</module>
         <module>okhttp-demo</module>
+        <module>skywalking-demo</module>
     </modules>
 
     <properties>
