@@ -44,6 +44,7 @@
 | resttemplate-demo   | http调用工具               |
 | seata-demo          | 分布式事务框架             |
 | shardingsphere-demo | 分库分表                   |
+| Skywalking-demo     | Skywalking APM 全链路追踪    |
 | spring-event-demo   | spring 企业级事件应用      |
 | spring-spel-demo    | sping SPEL 企业级开发相关  |
 | security-demo       | security 安全认证实现RBAC     |
