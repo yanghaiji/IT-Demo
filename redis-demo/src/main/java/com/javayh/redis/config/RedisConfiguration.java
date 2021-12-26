@@ -13,8 +13,9 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  * redis 配置
  * </p>
  * <br>
- *     参考 https://github.com/yanghaiji/javayh-platform/tree/master/javayh-dependencies/javayh-redis-starter/src/main/java/com/javayh/redis
+ * 参考 https://github.com/yanghaiji/javayh-platform/tree/master/javayh-dependencies/javayh-redis-starter/src/main/java/com/javayh/redis
  * </br>
+ *
  * @author Dylan
  * @version 1.0.0
  * @since 2020-12-17 3:49 PM
@@ -47,22 +48,22 @@ public class RedisConfiguration {
     }
 
     @Bean
-    public ListOperations<String,Object> listOperations(RedisTemplate<String, Object> redisTemplate) {
+    public ListOperations<String, Object> listOperations(RedisTemplate<String, Object> redisTemplate) {
         return redisTemplate.opsForList();
     }
 
     @Bean
-    public ZSetOperations<String,Object> zSetOperations(RedisTemplate<String, Object> redisTemplate) {
+    public ZSetOperations<String, Object> zSetOperations(RedisTemplate<String, Object> redisTemplate) {
         return redisTemplate.opsForZSet();
     }
 
     @Bean
-    public SetOperations<String,Object> setOperations(RedisTemplate<String, Object> redisTemplate) {
+    public SetOperations<String, Object> setOperations(RedisTemplate<String, Object> redisTemplate) {
         return redisTemplate.opsForSet();
     }
 
     @Bean
-    public ValueOperations<String,Object> valueOperations(RedisTemplate<String, Object> redisTemplate) {
+    public ValueOperations<String, Object> valueOperations(RedisTemplate<String, Object> redisTemplate) {
         return redisTemplate.opsForValue();
     }
 
@@ -73,11 +74,11 @@ public class RedisConfiguration {
     public RedisUtil redisUtil(RedisTemplate<String, Object> redisTemplate,
                                StringRedisTemplate stringRedisTemplate,
                                HashOperations<String, String, String> hashOperations,
-                               ListOperations<String,Object> listOperations,
-                               ZSetOperations<String,Object>zSetOperations,
-                               SetOperations<String,Object> setOperations,
-                               ValueOperations<String,Object> valueOperations) {
-        return new RedisUtil(redisTemplate, stringRedisTemplate,hashOperations,listOperations,
-                zSetOperations,setOperations,valueOperations);
+                               ListOperations<String, Object> listOperations,
+                               ZSetOperations<String, Object> zSetOperations,
+                               SetOperations<String, Object> setOperations,
+                               ValueOperations<String, Object> valueOperations) {
+        return new RedisUtil(redisTemplate, stringRedisTemplate, hashOperations, listOperations,
+                zSetOperations, setOperations, valueOperations);
     }
 }
