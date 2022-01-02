@@ -19,6 +19,12 @@ public class SlidingWindow {
 
     }
 
+    /**
+     * 计算指定长度内最大平均值
+     * @param nums 指定数组
+     * @param k 指定长度
+     * @return
+     */
     private static double findMaxAve(int[] nums, int k) {
         int n = nums.length;
         int sum = 0;
