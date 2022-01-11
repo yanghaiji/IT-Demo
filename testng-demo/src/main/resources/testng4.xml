@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="http 测试">
+    <test name="http api 请求百度页面">
+        <classes>
+            <class name="com.javayh.testng.demo.httpclient.ApiTest">
+                <methods>
+                    <include name="test01"/>
+                </methods>
+            </class> <!-- com.javayh.testng.demo.httpclient.ApiTest -->
+        </classes>
+    </test> <!-- advanced-demo -->
+</suite> <!-- Default Suite -->
