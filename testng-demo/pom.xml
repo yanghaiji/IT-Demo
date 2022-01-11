@@ -16,6 +16,7 @@
         <xmlFileName>src\main\resources\testng.xml</xmlFileName>
         <xmlFileName2>src\main\resources\testng2.xml</xmlFileName2>
         <xmlFileName3>src\main\resources\testng3.xml</xmlFileName3>
+        <xmlFileName4>src\main\resources\testng4.xml</xmlFileName4>
     </properties>
     <dependencies>
         <dependency>
@@ -69,6 +70,7 @@
                         <suiteXmlFile>${xmlFileName}</suiteXmlFile>
                         <suiteXmlFile>${xmlFileName2}</suiteXmlFile>
                         <suiteXmlFile>${xmlFileName3}</suiteXmlFile>
+                        <suiteXmlFile>${xmlFileName4}</suiteXmlFile>
                     </suiteXmlFiles>
                     <properties>
                         <property>
