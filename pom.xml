@@ -52,6 +52,8 @@
         <module>testng-demo</module>
         <module>okhttp-demo</module>
         <module>skywalking-demo</module>
+        <module>elasticsearch-demo</module>
+        <module>leetbook-demo</module>
     </modules>
 
     <properties>
