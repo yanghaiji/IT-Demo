@@ -1,0 +1,35 @@
+#spring:
+#  data:
+#    elasticsearch:
+#      client:
+#        #  反应式相关的配置
+#        reactive:
+#        #  端点
+#          endpoints:
+#          connection-timeout:
+#          max-in-memory-size:
+#          socket-timeout:
+#          use-ssl:
+#          username:
+#          password:
+
+spring:
+  elasticsearch:
+    rest:
+      # 逗号分隔的Elasticsearch实例使用的列表
+      uris: 52.131.45.5:9200
+      # 链接超时时间
+      connection-timeout: 6
+      # 读取超时时间
+      read-timeout: 6
+#      # ES 用户名
+#      username:
+#      # ES 密码
+#      password:
+
+logging:
+  level:
+    tracer: TRACE
+    org.springframework.data.elasticsearch.client.WIRE: TRACE
+    org.springframework.data.elasticsearch.core: DEBUG
+    org.springframework.data.elasticsearch.core.query: DEBUG

@@ -54,6 +54,7 @@
         <module>skywalking-demo</module>
         <module>elasticsearch-demo</module>
         <module>leetbook-demo</module>
+        <module>zookeeper-demo</module>
     </modules>
 
     <properties>
