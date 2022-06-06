@@ -1,0 +1,6 @@
+server:
+  port: 8090
+
+netty:
+  port: 8091
+  path: /javayh
