@@ -55,6 +55,7 @@
         <module>elasticsearch-demo</module>
         <module>leetbook-demo</module>
         <module>zookeeper-demo</module>
+        <module>boot-netty-demo</module>
     </modules>
 
     <properties>
