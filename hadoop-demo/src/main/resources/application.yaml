@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+#name-node
+hadoop.name-node: hdfs://localhost:9000
+#hdfs目录
+hadoop.namespace: /dataFile
+
+logging:
+  level:
+    com.javayh.hadoop: debug
+    com.jackroy.www: ERROR
+    learning: trace
+log4j:
+  rootLogger: WARN
