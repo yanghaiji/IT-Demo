@@ -57,6 +57,7 @@
         <module>zookeeper-demo</module>
         <module>boot-netty-demo</module>
         <module>hadoop-demo</module>
+        <module>multiple-data-sources</module>
     </modules>
 
     <properties>
