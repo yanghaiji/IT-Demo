@@ -58,6 +58,7 @@
         <module>boot-netty-demo</module>
         <module>hadoop-demo</module>
         <module>multiple-data-sources</module>
+        <module>async-config-demo</module>
     </modules>
 
     <properties>
