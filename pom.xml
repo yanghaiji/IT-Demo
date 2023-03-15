@@ -59,6 +59,7 @@
         <module>hadoop-demo</module>
         <module>multiple-data-sources</module>
         <module>async-config-demo</module>
+        <module>tenant-demo</module>
     </modules>
 
     <properties>
