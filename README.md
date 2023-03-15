@@ -47,6 +47,7 @@
 | Skywalking-demo     | Skywalking APM 全链路追踪    |
 | spring-event-demo   | spring 企业级事件应用      |
 | spring-spel-demo    | sping SPEL 企业级开发相关  |
+| tenant-demo    | 企业多租户解决方案  |
 | security-demo       | security 安全认证实现RBAC     |
 | security-token-demo | security + token 安全认证实现RBAC     |
 | testng-demo         | 接口自动化测试                 |
