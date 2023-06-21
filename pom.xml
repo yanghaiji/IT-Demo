@@ -60,6 +60,7 @@
         <module>multiple-data-sources</module>
         <module>async-config-demo</module>
         <module>tenant-demo</module>
+        <module>proxy-demo</module>
     </modules>
 
     <properties>
