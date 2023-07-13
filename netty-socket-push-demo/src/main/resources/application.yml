@@ -1,0 +1,7 @@
+server:
+  port: 7777
+
+
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration

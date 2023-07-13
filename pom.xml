@@ -62,6 +62,7 @@
         <module>tenant-demo</module>
         <module>proxy-demo</module>
         <module>hystrix-demo</module>
+        <module>netty-socket-push-demo</module>
     </modules>
 
     <properties>
