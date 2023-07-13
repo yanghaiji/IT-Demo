@@ -759,7 +759,7 @@ public class RedisUtil<K,V> implements RedisServer<K,V> {
     }
 
     @SafeVarargs
-    private void checkKey(K... key){
+    private final void checkKey(K... key){
         if(Objects.isNull(key)){
             throw new RedisKeyException("Redis key is null");
         }
