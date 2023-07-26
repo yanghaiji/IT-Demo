@@ -63,6 +63,7 @@
         <module>proxy-demo</module>
         <module>hystrix-demo</module>
         <module>netty-socket-push-demo</module>
+        <module>dp-demo</module>
     </modules>
 
     <properties>
