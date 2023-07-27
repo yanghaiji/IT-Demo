@@ -1,4 +1,4 @@
-package com.javayh.netty.socket;
+package com.javayh.netty.socket.broadcast;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

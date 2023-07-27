@@ -1,4 +1,4 @@
-package com.javayh.netty.socket;
+package com.javayh.netty.socket.broadcast;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

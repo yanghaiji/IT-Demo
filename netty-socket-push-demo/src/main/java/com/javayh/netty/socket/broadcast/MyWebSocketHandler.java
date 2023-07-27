@@ -1,4 +1,4 @@
-package com.javayh.netty.socket;
+package com.javayh.netty.socket.broadcast;
 
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
