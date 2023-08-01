@@ -1,0 +1,86 @@
+<!DOCTYPE>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+<!-- 标题 -->
+<h1 style="text-align: center;">实时日志</h1>
+
+<!-- 显示区 -->
+<div id="log-container" contenteditable="true"
+     style="width:100%;height: 500px;background-color: ghostwhite; overflow: auto;"></div>
+
+<!-- 操作栏 -->
+<div style="text-align: center;">
+    <button onclick="openSocket()" style="color: black; height: 35px;">连接</button>
+    <button onclick="closeSocket()" style="color: black; height: 35px;">关闭</button>
+    <button onclick="$('#log-container').text('')" style="color: green; height: 35px;">清屏</button>
+</div>
+<!--开启并使用SockJS后，它会优先选用Websocket协议作为传输协议-->
+<script type="application/javascript" src="https://cdn.bootcss.com/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script type="application/javascript" src="https://cdn.bootcss.com/stomp.js/2.3.3/stomp.min.js"></script>
+
+<script type="text/javascript">
+    var stompClient = null;
+
+    function openSocket() {
+        if (stompClient == null) {
+            if($("#log-container").find("span").length===0){
+                $("#log-container").append("<div style='color: #18d035;font-size: 14px'>通道连接成功,静默等待....</div>");
+            }
+            var socket = new SockJS('http://localhost:8080/websocket');
+            stompClient = Stomp.over(socket);
+            let headers = {
+                withCredentials: false
+            };
+            stompClient.connect(headers, function (frame) {
+                //订阅/topic/pullLogger的消息
+                stompClient.subscribe('/topic/pullLogger', function (event) {
+                    var content = JSON.parse(event.body);
+                    var leverhtml = '';
+                    var className = '<span class="classnametext">' + content.className + '</span>';
+                    switch (content.level) {
+                        case 'INFO':
+                            leverhtml = "<span style='color: #90ad2b'>" +content.level + "</span>";
+                            break;
+                        case 'DEBUG':
+                            leverhtml = "<span style='color: #A8C023'>" +content.level + "</span>";
+                            break;
+                        case 'WARN':
+                            leverhtml = "<span style='color: #fffa1c'>" +content.level + "</span>";
+                            break;
+                        case 'ERROR':
+                            leverhtml = "<span style='color: #e3270e'>" +content.level + "</span>";
+                            break;
+                    }
+                    $("#log-container").append("<p class='logp'>" + content.timestamp + " " + leverhtml + " --- [" + content.threadName + "] " + className + " ：" + content.body + "</p>");
+                    if (content.exception != "") {
+                        $("#log-container").append("<p class='logp'>" + content.exception + "</p>");
+                    }
+                    if (content.cause != "") {
+                        $("#log-container").append("<p class='logp'>" + content.cause + "</p>");
+                    }
+                    //自适应高度
+                    //$("#log-container").scrollTop($("#log-container").height() - $("#log-container").height());
+                }, {
+                    token: "kltoen"
+                });
+            });
+        }
+    }
+
+    function closeSocket() {
+        if (stompClient != null) {
+            stompClient.disconnect();
+            stompClient = null;
+        }
+    }
+
+</script>
+
+</body>
+</html>

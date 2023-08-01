@@ -64,6 +64,7 @@
         <module>hystrix-demo</module>
         <module>netty-socket-push-demo</module>
         <module>dp-demo</module>
+        <module>websocket-simp-messaging</module>
     </modules>
 
     <properties>
