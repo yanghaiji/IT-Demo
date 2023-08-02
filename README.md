@@ -35,10 +35,12 @@
 | mail-demo           | 邮件发送                   |
 | mybatis-demo        | mybatis相关                |
 | netty-demo          | netty相关                  |
+| netty-socket-push-demo          | netty websocket 实现消息实时推送,支持通过接口自定义推送消息 |
 | oauth2-demo         | 第三方登录演示（github）   |
 | okhttp-demo         | 第三方登录演示（github）   |
 | oshi-demo           | 服务器状态检测             |
 | quartz-demo         | 定时框架                   |
+| proxy-demo          | 关于代理的一些演示                |
 | redis-demo          | redis相关                  |
 | redisson-demo       | redisson相关               |
 | resttemplate-demo   | http调用工具               |
@@ -53,3 +55,4 @@
 | testng-demo         | 接口自动化测试                 |
 | webflux-demo        | 响应式编程                 |
 | websocket-demo      | websocket相关              |
+| websocket-demo      | websocket simpmessaging实现将后台日志实时推送到页面              |
