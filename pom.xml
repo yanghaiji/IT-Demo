@@ -65,6 +65,7 @@
         <module>netty-socket-push-demo</module>
         <module>dp-demo</module>
         <module>websocket-simp-messaging</module>
+        <module>assembly-demo</module>
     </modules>
 
     <properties>
