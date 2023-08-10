@@ -66,6 +66,7 @@
         <module>dp-demo</module>
         <module>websocket-simp-messaging</module>
         <module>assembly-demo</module>
+        <module>jimu-report-demo</module>
     </modules>
 
     <properties>
