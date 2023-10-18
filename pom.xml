@@ -67,6 +67,8 @@
         <module>websocket-simp-messaging</module>
         <module>assembly-demo</module>
         <module>jimu-report-demo</module>
+        <module>mybatis-flex-demo</module>
+        <module>udp-demo</module>
     </modules>
 
     <properties>

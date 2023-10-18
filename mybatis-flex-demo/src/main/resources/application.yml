@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://52.131.45.110:3307/test
+    username: root
+    password: pandora@2022
+
+mybatis-flex:
+  type-aliases-package: com.javayh.mybatis.flex
